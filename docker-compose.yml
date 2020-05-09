@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+    php-apache:
+        container_name: php-apache
+        build: ./build
+        ports:
+            - 8888:80
+        volumes:
+            - ./html:/var/www/html
+        depends_on: 
+            - mdb
+
+    mdb:
+        container_name: mdb
+        image: mariadb:latest
+        ports:
+            - 3306:3306
+        volumes:
+            - ./mariadb:/var/lib/mysql
+            - ./sql:/opt/scripts
+        environment:
+            TZ: "Europe/Berlin"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+            MYSQL_ROOT_PASSWORD: "root"
+            MYSQL_USER: 'test'
+            MYSQL_PASSWORD: 'test'
+            MYSQL_DATABASE: 'testdb'
