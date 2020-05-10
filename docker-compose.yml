@@ -7,12 +7,12 @@ services:
         ports:
             - 8888:80
         volumes:
-            - ./html:/var/www/html
+            - ./doc-root:/var/www/html
         depends_on: 
-            - mdb
+            - mariadb
 
     mdb:
-        container_name: mdb
+        container_name: mariadb
         image: mariadb:latest
         ports:
             - 3306:3306
