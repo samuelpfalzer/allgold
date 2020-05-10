@@ -38,11 +38,18 @@ class Produkt {
             return FALSE;
         }
         $res = $this->con->query("SELECT * FROM Produkt WHERE name='$name'");
-        if (!$res) {
-            $this->name = $name;
-            $this->preis = $preis;
+        if ($res) {
+            if ($res->num_rows == 0) {
+                $this->name = $name;
+                $this->preis = $preis;
+                $res2 = $this->con->query("INSERT INTO Produkt(name,preis) VALUES ('" . $this->name . "', " . $this->preis . ")");
+                if ($res2) {
+                    $this->geladen = TRUE;
+                    return TRUE;
+                }
+            }
         }
-        return False;
+        return FALSE;
     }
 
     public function speichern() {
