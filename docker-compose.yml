@@ -11,7 +11,7 @@ services:
         depends_on: 
             - mariadb
 
-    mdb:
+    mariadb:
         container_name: mariadb
         image: mariadb:latest
         ports:

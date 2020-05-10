@@ -1,7 +1,7 @@
 <?php
 echo "PHP Test 2<br/>";
 
-$mysqli = new mysqli('mdb', 'test', 'test', 'testdb');
+$mysqli = new mysqli('mariadb', 'test', 'test', 'testdb');
 
 if ($mysqli->connect_errno) {
     echo("cant connect to mariadb");
@@ -18,5 +18,8 @@ if ($mysqli->connect_errno) {
         echo("</ul>");
     }
 }
+
+$arr = array("test" => 12345);
+echo(json_encode($arr));
 
 ?>
