@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-    php-apache:
-        container_name: php-apache
+    allgold-api:
+        container_name: allgold-api
         build: ./build
         ports:
             - 8888:80
         volumes:
-            - ./doc-root:/var/www/html
+            - ./api:/var/www/html
         depends_on: 
-            - mariadb
+            - allgold-db
 
-    mariadb:
-        container_name: mariadb
+    allgold-db:
+        container_name: allgold-db
         image: mariadb:latest
         ports:
             - 3306:3306
@@ -25,4 +25,4 @@ services:
             MYSQL_ROOT_PASSWORD: "root"
             MYSQL_USER: 'test'
             MYSQL_PASSWORD: 'test'
-            MYSQL_DATABASE: 'testdb'
+            MYSQL_DATABASE: 'allgold'
