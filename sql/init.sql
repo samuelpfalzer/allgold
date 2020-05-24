@@ -36,6 +36,7 @@ CREATE TABLE Inventar (
     vorrat INTEGER NOT NULL,
     bedarf INTEGER NOT NULL,
 
+    UNIQUE (verkaufsstelle_id, produkt_id),
     FOREIGN KEY (verkaufsstelle_id) REFERENCES Verkaufsstelle(id),
     FOREIGN KEY (produkt_id) REFERENCES Produkt(id)
 );
