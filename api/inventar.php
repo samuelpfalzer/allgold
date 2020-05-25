@@ -4,6 +4,7 @@ $con = new mysqli("allgold-db", "test", "test", "allgold") or die("Datenbankverb
 
 switch ($_SERVER["REQUEST_METHOD"]) {
     case "GET":
+        /* Inventarinfo zu einem Produkt an einer Verkaufsstelle */
         if (isset($_GET["verkaufsstelle"]) and isset($_GET["produkt"])) {
             $verkaufsstelle = $_GET["verkaufsstelle"];
             $produkt = $_GET["produkt"];
@@ -16,7 +17,9 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             } else {
                 http_response_code(404);
             }
-        } else if (isset($_GET["verkaufsstelle"])) {
+        }
+
+        /* Inventarinfo zu allen Produkten an einer Verkaufsstelle */ else if (isset($_GET["verkaufsstelle"])) {
             $verkaufsstelle = $_GET["verkaufsstelle"];
             $res = $con->query("SELECT prod.name AS produkt, vorrat, bedarf FROM (SELECT produkt_id, vorrat, bedarf FROM Inventar WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle')) AS inv, (SELECT * FROM Produkt) as prod WHERE prod.id = inv.produkt_id;");
 
