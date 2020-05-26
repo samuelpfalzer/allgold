@@ -1,18 +1,36 @@
-<h2>Lieferplan</h2>
-<div *ngFor="let vs of service.lieferplan">
-    <h4>{{vs.name}}</h4>
-    <div>Adresse: {{vs.ort}}</div>
-    <ul>
-        <li *ngFor="let posten of vs.posten">{{posten.produkt}}: {{posten.menge}} Stk.</li>
-    </ul>
+<mat-toolbar color="primary">
+    <h2 class="mat-headline">Lieferplan</h2>
+</mat-toolbar>
+
+<div class="lieferplan-container">
+    <mat-card *ngFor="let lieferung of lieferungen" class="mat-elevation-z8 lieferplan-item">
+        <div>
+            <mat-card-header>
+                <mat-card-title>{{lieferung.name}}</mat-card-title>
+                <mat-card-subtitle>{{lieferung.ort}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                <table mat-table [dataSource]="lieferung.data">
+                    <ng-container matColumnDef="Produkt">
+                        <th mat-header-cell *matHeaderCellDef> Produkt </th>
+                        <td mat-cell *matCellDef="let element"> {{element.produkt}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="Menge">
+                        <th mat-header-cell *matHeaderCellDef> Menge </th>
+                        <td mat-cell *matCellDef="let element"> {{element.menge}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+                    <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
+                </table>
+            </mat-card-content>
+        </div>
+
+        <button mat-raised-button color="primary">
+            GELIEFERT
+            <mat-icon aria-hidden="false">done</mat-icon>
+        </button>
+    </mat-card>
 </div>
-
-<table mat-table [dataSource]="pimmel">
-    <ng-container matColumnDef="Produkt">
-        <th mat-header-cell *matHeaderCellDef> Produkt </th>
-        <td mat-cell *matCellDef="let pimmel"> {{pimmel}} </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-    <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
-</table>

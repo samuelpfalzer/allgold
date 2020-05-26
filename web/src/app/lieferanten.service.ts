@@ -11,6 +11,6 @@ export class LieferantenService {
   constructor(private http: HttpClient) { }
 
   fetchLieferplan() {
-    this.http.get("/api/lieferung").subscribe((data) => { this.lieferplan = data; });
+    this.http.get("/api/lieferung").subscribe((data) => { return data; });
   }
 }

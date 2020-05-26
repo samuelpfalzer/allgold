@@ -1,9 +1,9 @@
-<mat-toolbar color="primary">
-  <span routerLink="/" routerLinkActive="active">Allgold</span>
+<mat-toolbar color="primary" class="mat-elevation-z6 navbar">
+  <span>Allgold</span>
   <span style="flex: 1 1 auto;"> </span>
+  <a mat-button routerLink="/" routerLinkActive="active">Home</a>
   <a mat-button routerLink="/app-haendler-login" routerLinkActive="active">Händler</a>
   <a mat-button routerLink="/app-lieferanten-login" routerLinkActive="active">Lieferanten</a>
 </mat-toolbar>
-
 
 <router-outlet></router-outlet>

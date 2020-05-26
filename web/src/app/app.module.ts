@@ -16,6 +16,9 @@ import { LieferantenLoginComponent } from './lieferanten-login/lieferanten-login
 import { LieferantenMenuComponent } from './lieferanten-menu/lieferanten-menu.component';
 import { HaendlerMenuComponent } from './haendler-menu/haendler-menu.component';
 import { LieferplanComponent } from './lieferplan/lieferplan.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -37,7 +40,10 @@ import { LieferplanComponent } from './lieferplan/lieferplan.component';
     MatButtonModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatCardModule,
+    MatDividerModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

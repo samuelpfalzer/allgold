@@ -1,0 +1,26 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    width: 50%;
+}
+
+.lieferplan-container {
+    margin: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    vertical-align: bottom;
+}
+
+.lieferplan-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.lieferplan-container button {
+    display: block;
+}
