@@ -19,6 +19,7 @@ import { LieferplanComponent } from './lieferplan/lieferplan.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatIconModule } from '@angular/material/icon';
     LieferantenLoginComponent,
     LieferantenMenuComponent,
     HaendlerMenuComponent,
-    LieferplanComponent
+    LieferplanComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

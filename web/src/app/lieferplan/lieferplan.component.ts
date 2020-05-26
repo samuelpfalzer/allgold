@@ -32,6 +32,7 @@ export class LieferplanComponent implements OnInit {
   ngOnInit(): void { }
 
   refreshLieferplan() {
+    this.lieferungen = [];
     this.http.get("/api/lieferung").subscribe((data: any[]) => {
       data.forEach(element => {
         let lieferung: Lieferung = { name: element.name, ort: element.ort, data: new ProduktMengeDataSource(element.posten) };
@@ -39,7 +40,21 @@ export class LieferplanComponent implements OnInit {
       })
     });
   }
+
+  geliefert(name: string) {
+    let lieferung: Lieferung = this.lieferungen.find((x) => x.name === name);
+    this.http.post("/api/lieferung",
+      {
+        verkaufsstelle: lieferung.name,
+        posten: lieferung.data.data.value
+      }
+    ).subscribe((x) => {
+      console.log(x);
+      this.refreshLieferplan();
+    });
+  }
 }
+
 
 export class ProduktMengeDataSource extends DataSource<ProduktMengeRow> {
   data: BehaviorSubject<ProduktMengeRow[]>;

@@ -1,0 +1,10 @@
+.cow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../mat/andy-kelly-unsplash.jpg");
+    background-size: cover;
+    background-repeat: none;
+    background-position-x: right;
+    background-position-y: center;
+}
