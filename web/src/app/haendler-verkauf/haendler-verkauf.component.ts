@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./haendler-verkauf.component.css']
 })
 export class HaendlerVerkaufComponent implements OnInit {
+  name: string = "Pimmel";
 
   constructor() { }
 

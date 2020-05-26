@@ -1,7 +1,11 @@
 <mat-toolbar color="primary">
-    <h2 class="mat-headline">Händler-Menü {{name}}</h2>
+    <h2 class="mat-headline">{{name}}</h2>
 </mat-toolbar>
 
-<div class="component-container">
-    <a mat-raised-button color="primary" routerLink="/app-lieferplan" routerLinkActive="active">LIEFERPLAN</a>
+<div class="component-container haendler-menu-container">
+    <a mat-raised-button color="primary" [routerLink]="['/app-haendler-inventar', name]"
+        routerLinkActive="active">Inventar</a>
+    <br />
+    <a mat-raised-button color="primary" [routerLink]="['/app-haendler-verkauf', name]"
+        routerLinkActive="active">Verkauf</a>
 </div>
