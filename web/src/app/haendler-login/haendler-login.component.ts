@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-haendler-login',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./haendler-login.component.css']
 })
 export class HaendlerLoginComponent implements OnInit {
+  verkaufsstellen: any;
+  name: string;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    http.get("/api/verkaufsstelle").subscribe((elem) => {
+      this.verkaufsstellen = elem;
+    });
+  }
 
   ngOnInit(): void {
   }

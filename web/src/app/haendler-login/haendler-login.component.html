@@ -1,3 +1,18 @@
 <mat-toolbar color="primary">
     <h2 class="mat-headline">Händler-Login</h2>
 </mat-toolbar>
+
+<div class="component-container haendler-login-container">
+
+    <mat-form-field>
+        <mat-label>Verkaufsstelle</mat-label>
+        <mat-select [(value)]="name">
+            <mat-option *ngFor="let verkaufsstelle of verkaufsstellen" [value]="verkaufsstelle">{{verkaufsstelle}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="login-link-wrapper">
+        <a mat-raised-button color="primary" [routerLink]="['/app-haendler-menu', name]"
+            routerLinkActive="active">LOGIN</a>
+    </div>
+</div>

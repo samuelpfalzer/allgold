@@ -1,0 +1,12 @@
+.haendler-login-container {
+    text-align: center;
+    justify-content: center;
+}
+
+mat-form-field {
+    display: inline-block;
+}
+
+a {
+    display: inline-block;
+}

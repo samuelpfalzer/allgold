@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: "app-haendler-login", component: HaendlerLoginComponent },
   { path: "app-lieferanten-login", component: LieferantenLoginComponent },
   { path: "app-lieferanten-menu", component: LieferantenMenuComponent },
-  { path: "app-haendler-menu", component: HaendlerMenuComponent },
+  { path: "app-haendler-menu/:name", component: HaendlerMenuComponent },
   { path: "app-lieferplan", component: LieferplanComponent },
   { path: "app-home", component: HomeComponent },
   { path: "", redirectTo: "app-home", pathMatch: "full" }

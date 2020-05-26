@@ -20,6 +20,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HaendlerInventarComponent } from './haendler-inventar/haendler-inventar.component';
+import { HaendlerVerkaufComponent } from './haendler-verkauf/haendler-verkauf.component';
 
 
 @NgModule({
@@ -30,7 +34,9 @@ import { HomeComponent } from './home/home.component';
     LieferantenMenuComponent,
     HaendlerMenuComponent,
     LieferplanComponent,
-    HomeComponent
+    HomeComponent,
+    HaendlerInventarComponent,
+    HaendlerVerkaufComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,9 @@ import { HomeComponent } from './home/home.component';
     MatTableModule,
     MatCardModule,
     MatDividerModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

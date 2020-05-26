@@ -6,10 +6,6 @@
     top: 0;
 }
 
-h2 {
-    font-weight: 300;
-}
-
 router-outlet {
     z-index: 50;
 }
