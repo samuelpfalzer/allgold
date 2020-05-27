@@ -49,6 +49,7 @@ export class HaendlerInventarComponent implements OnInit {
   produktAnfordern() {
     this.inventar.push({ produkt: this.neuesProdukt, vorrat: 0, bedarf: 1 });
     this.inventar = this.inventar.map(x => x); /* if removed, table will not update */
+    this.neuesProdukt = "";
     console.log(this.inventar);
   }
 

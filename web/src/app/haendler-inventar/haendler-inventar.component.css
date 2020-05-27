@@ -16,3 +16,15 @@ mat-card {
 .anforderButton {
     margin-left: 1rem;
 }
+
+.td-produkt {
+    width: 50%;
+}
+
+.td-bedarf {
+    width: 25%;
+}
+
+.td-vorrat {
+    width: 25%;
+}

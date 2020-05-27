@@ -1,3 +1,47 @@
 <mat-toolbar color="primary">
     <h2 class="mat-headline">{{name}}: Verkauf</h2>
 </mat-toolbar>
+
+<div class="component-container">
+    <p>Pimmel</p>
+
+    <table mat-table [dataSource]="verkauf" class="mat-elevation-z8">
+        <ng-container matColumnDef="Produkt">
+            <th mat-header-cell *matHeaderCellDef> Produkt </th>
+            <td class="td-produkt" mat-cell *matCellDef="let element"> {{element.produkt}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Menge">
+            <th mat-header-cell *matHeaderCellDef> Menge </th>
+            <td class="td-menge" mat-cell *matCellDef="let element"> {{element.menge}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Preis">
+            <th mat-header-cell *matHeaderCellDef> Preis </th>
+            <td class="td-preis" mat-cell *matCellDef="let element">
+                {{element.preis}} &euro;
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
+    </table>
+
+    <mat-card>
+        <mat-form-field>
+            <mat-label>Posten hinzufügen</mat-label>
+            <mat-select [(value)]="neuesProdukt">
+                <ng-container *ngFor="let produkt of inventar">
+                    <mat-option *ngIf="produkt.verwendet == false" [value]="produkt.produkt">
+                        {{produkt.produkt}}
+                    </mat-option>
+                </ng-container>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button class="anforderButton" color="primary" (click)="neuerPosten()">Hinzufügen</button>
+    </mat-card>
+
+
+
+
+</div>

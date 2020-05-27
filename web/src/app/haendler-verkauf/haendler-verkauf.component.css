@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+}
+
+.td-produkt {
+    width: 50%;
+}
+
+.td-menge {
+    width: 25%;
+}
+
+.td-preis {
+    width: 25%;
+}
+
+mat-card {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.bedarf {
+    display: inline-block;
+    text-align: center;
+    width: 2rem;
+}
+
+.anforderButton {
+    margin-left: 1rem;
+}
