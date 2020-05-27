@@ -6,7 +6,8 @@ INSERT INTO Verkaufsstelle(typ, name, ort) VALUES
 ('Automat', 'Automat 001', 'Milchstrasse 23'),
 ('Haendler', 'Molkereiprodukte Mueller', 'Malerweg 1'),
 ('Automat', 'Automat 002', 'Hauptstrasse 108'),
-('Haendler', 'Herr Fahris fahrbarer Quarkverkauf', 'mobil');
+('Haendler', 'Herr Fahris fahrbarer Quarkverkauf', 'mobil'),
+('Haendler', 'Quarkmatik', 'CSStreet 123');;
 
 INSERT INTO Lieferant(name) VALUES
 ('Peter Pointer'), ('Big Dick Kadim'), ('Herr Fahri');
@@ -24,4 +25,8 @@ INSERT INTO Inventar(verkaufsstelle_id, produkt_id, vorrat, bedarf) VALUES
 ((SELECT id FROM Verkaufsstelle WHERE name = 'Automat 002'), (SELECT id FROM Produkt WHERE name = 'Emmentaler'), 0, 5),
 ((SELECT id FROM Verkaufsstelle WHERE name = 'Herr Fahris fahrbarer Quarkverkauf'), (SELECT id FROM Produkt WHERE name = 'Emmentaler'), 4, 4),
 ((SELECT id FROM Verkaufsstelle WHERE name = 'Herr Fahris fahrbarer Quarkverkauf'), (SELECT id FROM Produkt WHERE name = 'Milch'), 0, 5),
-((SELECT id FROM Verkaufsstelle WHERE name = 'Herr Fahris fahrbarer Quarkverkauf'), (SELECT id FROM Produkt WHERE name = 'Erdbeerkaese'), 0, 5);
+((SELECT id FROM Verkaufsstelle WHERE name = 'Herr Fahris fahrbarer Quarkverkauf'), (SELECT id FROM Produkt WHERE name = 'Erdbeerkaese'), 0, 5),
+((SELECT id FROM Verkaufsstelle WHERE name = 'Quarkmatik'), (SELECT id FROM Produkt WHERE name = 'Milch'), 10, 20),
+((SELECT id FROM Verkaufsstelle WHERE name = 'Quarkmatik'), (SELECT id FROM Produkt WHERE name = 'Naturjoghurt'), 2, 5),
+((SELECT id FROM Verkaufsstelle WHERE name = 'Quarkmatik'), (SELECT id FROM Produkt WHERE name = 'Quark'), 0, 5),
+((SELECT id FROM Verkaufsstelle WHERE name = 'Quarkmatik'), (SELECT id FROM Produkt WHERE name = 'Sahne'), 17, 20);

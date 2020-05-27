@@ -24,10 +24,31 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             $lieferplan_out[] = $val;
         }
 
+        http_response_code(200);
         echo (json_encode($lieferplan_out));
         break;
 
-        /* Erfolgte Lieferung melden */
+        /* Erfolgte Lieferung melden; geht davon aus, dass das gesamte Inventar eines Händlers aufgefüllt wurde */
     case "POST":
+        $payload = json_decode(file_get_contents("php://input"), true);
+        if (!(isset($payload["posten"]) and isset($payload["verkaufsstelle"]))) {
+            http_response_code(400);
+        }
+
+        $response = array();
+        foreach ($payload["posten"] as $pimmel) {
+            $verkaufsstelle = $payload["verkaufsstelle"];
+            $produkt = $pimmel["produkt"];
+            $menge = $pimmel["menge"];
+
+            $res = $con->query("INSERT INTO Lieferung(verkaufsstelle_id, produkt_id, menge, lieferant) VALUES ((SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle'),(SELECT id FROM Produkt WHERE name='$produkt'),$menge,1);");
+
+            $res = $con->query("UPDATE Inventar SET vorrat = vorrat + $menge WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle') AND produkt_id = (SELECT id FROM Produkt WHERE name='$produkt');");
+
+            $response[] = "UPDATE Inventar SET vorrat = vorrat + $menge WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle') AND produkt_id = (SELECT id FROM Produkt WHERE name='$produkt');";
+        }
+
+        http_response_code(200);
+        echo (json_encode($response));
         break;
 }

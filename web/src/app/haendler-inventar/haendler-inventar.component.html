@@ -1,1 +1,47 @@
-<p>haendler-inventar works!</p>
+<mat-toolbar color="primary">
+    <h2 class="mat-headline">{{name}}: Inventar</h2>
+</mat-toolbar>
+
+<div class="component-container">
+    <table mat-table [dataSource]="inventar" class="mat-elevation-z8">
+        <ng-container matColumnDef="Produkt">
+            <th mat-header-cell *matHeaderCellDef> Produkt </th>
+            <td mat-cell *matCellDef="let element"> {{element.produkt}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Vorrat">
+            <th mat-header-cell *matHeaderCellDef> Vorrat </th>
+            <td mat-cell *matCellDef="let element"> {{element.vorrat}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Bedarf">
+            <th mat-header-cell *matHeaderCellDef> Bedarf </th>
+            <td mat-cell *matCellDef="let element">
+                <button *ngIf="element.bedarf > 0" mat-icon-button color="warn" (click)="wenigerBedarf(element)">
+                    <mat-icon>remove_circle</mat-icon>
+                </button>
+                <button *ngIf="element.bedarf == 0" mat-icon-button disabled>
+                    <mat-icon>remove_circle</mat-icon>
+                </button>
+                <span class="bedarf">{{element.bedarf}}</span>
+                <button mat-icon-button color="primary" (click)="mehrBedarf(element)">
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
+    </table>
+
+    <mat-card>
+        <mat-form-field>
+            <mat-label>Neues Produkt anfordern</mat-label>
+            <mat-select [(value)]="neuesProdukt">
+                <mat-option *ngFor="let produkt of produkte" [value]="produkt">{{produkt}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button class="anforderButton" color="primary" (click)="produktAnfordern()">Anfordern</button>
+    </mat-card>
+</div>

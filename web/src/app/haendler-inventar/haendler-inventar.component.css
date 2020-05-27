@@ -1,0 +1,18 @@
+table {
+    width: 100%;
+}
+
+mat-card {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.bedarf {
+    display: inline-block;
+    text-align: center;
+    width: 2rem;
+}
+
+.anforderButton {
+    margin-left: 1rem;
+}
