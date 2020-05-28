@@ -14,9 +14,14 @@ table {
     width: 25%;
 }
 
-mat-card {
+.neues-produkt-card {
     margin-top: 1rem;
     text-align: center;
+}
+
+.gesamt-card {
+    margin-top: 1rem;
+    text-align: right;
 }
 
 .bedarf {

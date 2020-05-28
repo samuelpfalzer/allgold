@@ -52,7 +52,6 @@ export class HaendlerInventarComponent implements OnInit {
     this.neuesProdukt = "";
     console.log(this.inventar);
   }
-
 }
 
 

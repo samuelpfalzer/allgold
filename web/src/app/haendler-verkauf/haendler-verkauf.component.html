@@ -3,9 +3,7 @@
 </mat-toolbar>
 
 <div class="component-container">
-    <p>Pimmel</p>
-
-    <table mat-table [dataSource]="verkauf" class="mat-elevation-z8">
+    <table mat-table *ngIf="verkauf.length > 0" [dataSource]="verkauf" class="mat-elevation-z8">
         <ng-container matColumnDef="Produkt">
             <th mat-header-cell *matHeaderCellDef> Produkt </th>
             <td class="td-produkt" mat-cell *matCellDef="let element"> {{element.produkt}} </td>
@@ -13,7 +11,22 @@
 
         <ng-container matColumnDef="Menge">
             <th mat-header-cell *matHeaderCellDef> Menge </th>
-            <td class="td-menge" mat-cell *matCellDef="let element"> {{element.menge}} </td>
+            <td class="td-menge" mat-cell *matCellDef="let element">
+                <button *ngIf="element.menge > 0" mat-icon-button color="warn" (click)="wenigerVon(element)">
+                    <mat-icon>remove_circle</mat-icon>
+                </button>
+                <button *ngIf="element.menge == 0" mat-icon-button disabled>
+                    <mat-icon>remove_circle</mat-icon>
+                </button>
+                <span class="menge">{{element.menge}}</span>
+                <button *ngIf="element.vorrat > element.menge" mat-icon-button color="primary"
+                    (click)="mehrVon(element)">
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+                <button *ngIf="element.menge == element.vorrat" mat-icon-button disabled>
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </td>
         </ng-container>
 
         <ng-container matColumnDef="Preis">
@@ -24,21 +37,33 @@
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
+        <tr mat-row *matRowDef="let element; columns: columns"></tr>
     </table>
 
-    <mat-card>
+    <mat-card class="neues-produkt-card" *ngIf="inventar.length > 0">
         <mat-form-field>
             <mat-label>Posten hinzufügen</mat-label>
             <mat-select [(value)]="neuesProdukt">
                 <ng-container *ngFor="let produkt of inventar">
-                    <mat-option *ngIf="produkt.verwendet == false" [value]="produkt.produkt">
+                    <mat-option [value]="produkt.produkt">
                         {{produkt.produkt}}
                     </mat-option>
                 </ng-container>
             </mat-select>
         </mat-form-field>
-        <button mat-raised-button class="anforderButton" color="primary" (click)="neuerPosten()">Hinzufügen</button>
+        <button *ngIf="neuesProdukt != null" mat-raised-button class="anforderButton" color="primary"
+            (click)="neuerPosten()">Hinzufügen</button>
+        <button *ngIf="neuesProdukt == null" mat-raised-button class="anforderButton" disabled>Hinzufügen</button>
+    </mat-card>
+
+    <mat-card class="gesamt-card">
+        <mat-card-title>GESAMT {{getGesamtpreis().toFixed(2)}} &euro;</mat-card-title>
+        <mat-card-actions>
+            <button mat-raised-button class="verkaufButton" color="warn" (click)="verkaufAbbrechen()">Abbrechen</button>
+            <button *ngIf="getGesamtpreis() > 0" mat-raised-button class="verkaufButton" color="primary"
+                (click)="verkaufen()">Verkaufen</button>
+            <button *ngIf="getGesamtpreis() == 0" mat-raised-button class="verkaufButton" disabled>Verkaufen</button>
+        </mat-card-actions>
     </mat-card>
 
 

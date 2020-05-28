@@ -7,14 +7,16 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         break;
 
     case "POST":
-        if (isset($_POST["json"])) {
+        /* Format: {verkaufsstelle: "...", posten: [{produkt: id, menge: 2}, ...]}} */
+        $payload = json_decode(file_get_contents("php://input"), true);
+        if (!(isset($payload["posten"]) and isset($payload["verkaufsstelle"]))) {
+            http_response_code(400);
+            break;
+        } else {
             $fehler = false;
-            $verkauf = json_decode($_POST["json"], true);
-            $verkaufsstelle = $verkauf["verkaufsstelle"];
+            $posten = $payload["posten"];
+            $verkaufsstelle = $payload["verkaufsstelle"];
             $verkaufsstelle_id = 0;
-            $produkt_ids = array();
-            $produkt_vorratsmengen = array();
-            $produkt_mengen = array();
 
             $res = $con->query("SELECT id FROM Verkaufsstelle WHERE name = '$verkaufsstelle';");
             if ($res->num_rows > 0) {
@@ -25,30 +27,18 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             }
             $res->free();
 
-            $produkte = $verkauf["produkte"];
-            foreach ($produkte as $produkt) {
-                foreach ($produkt as $name => $menge) {
-                    /* id des Produkts abfragen */
-                    $res =  $con->query("SELECT id FROM Produkt WHERE name = '$name';");
-                    if ($res->num_rows > 0) {
-                        $produkt_ids[$name] = intval($res->fetch_assoc()["id"]);
-                        $produkt_id = $produkt_ids[$name];
-                    } else {
-                        $fehler = true;
-                    }
-                    $res->free();
+            foreach ($posten as $p) {
+                $produkt_id = $p["id"];
 
-                    /* verfuegbare Menge des Produkts an der Verkaufsstelle abfragen */
-                    $res = $con->query("SELECT vorrat FROM Inventar WHERE verkaufsstelle_id = $verkaufsstelle_id AND produkt_id = $produkt_id;");
-                    if ($res->num_rows > 0) {
-                        $produkt_vorratsmengen[$name] = intval($res->fetch_assoc()["vorrat"]);
-                        if ($menge > $produkt_vorratsmengen[$name]) {
-                            $fehler = true;
-                        }
-                        $produkt_mengen[$name] = $menge;
-                    } else {
+                /* verfuegbare Menge des Produkts an der Verkaufsstelle abfragen */
+                $res = $con->query("SELECT vorrat FROM Inventar WHERE verkaufsstelle_id = $verkaufsstelle_id AND produkt_id = $produkt_id;");
+                if ($res->num_rows > 0) {
+                    $vorrat = intval($res->fetch_assoc()["vorrat"]);
+                    if ($p["menge"] > $vorrat) {
                         $fehler = true;
                     }
+                } else {
+                    $fehler = true;
                 }
             }
 
@@ -57,9 +47,10 @@ switch ($_SERVER["REQUEST_METHOD"]) {
                 break;
             }
 
-            foreach ($produkt_ids as $name => $id) {
+            foreach ($posten as $p) {
                 /* Verkauf erstellen */
-                $menge = $produkt_mengen[$name];
+                $menge = $p["menge"];
+                $id = $p["id"];
                 $con->query("INSERT INTO Verkauf(verkaufsstelle_id, produkt_id, menge) VALUES ($verkaufsstelle_id, $id, $menge);");
 
                 /* Inventar updaten */
@@ -67,8 +58,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             }
 
             http_response_code(200);
-        } else {
-            http_response_code(400);
+            echo (json_encode('{pimmel: "ok"'));
         }
         break;
 

@@ -21,7 +21,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
 
         /* Inventarinfo zu allen Produkten an einer Verkaufsstelle */ else if (isset($_GET["verkaufsstelle"])) {
             $verkaufsstelle = $_GET["verkaufsstelle"];
-            $res = $con->query("SELECT prod.name AS produkt, vorrat, bedarf FROM (SELECT produkt_id, vorrat, bedarf FROM Inventar WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle')) AS inv, (SELECT * FROM Produkt) as prod WHERE prod.id = inv.produkt_id;");
+            $res = $con->query("SELECT prod.id AS artnr, prod.name AS produkt, prod.preis AS preis, vorrat, bedarf FROM (SELECT produkt_id, vorrat, bedarf FROM Inventar WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle')) AS inv, (SELECT * FROM Produkt) as prod WHERE prod.id = inv.produkt_id;");
 
             if ($res->num_rows > 0) {
                 $inventar = array();
