@@ -1,1 +1,39 @@
-<p>neue-verkaufsstelle works!</p>
+<mat-toolbar color="primary">
+    <h2 class="mat-headline">Neues Produkt</h2>
+</mat-toolbar>
+
+<div class="component-container neue-verkaufsstelle-container">
+    <div></div>
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-content>
+
+            <mat-form-field>
+                <mat-label>Typ</mat-label>
+                <mat-select [(value)]="typ">
+                    <mat-option *ngFor="let t of typen" [value]="t">
+                        {{t}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input matInput placeholder="Name" [(ngModel)]="name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Ort</mat-label>
+                <input matInput placeholder="Ort" [(ngModel)]="ort">
+            </mat-form-field>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button *ngIf="(name != null) && (ort != null) && (typ != null)" mat-button color="primary"
+                (click)="eroeffnen()">ERÖFFNEN</button>
+            <button *ngIf="(name == null) || (ort == null) || (typ == null)" mat-button disabled>ERÖFFNEN</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
