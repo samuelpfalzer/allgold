@@ -30,12 +30,13 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         break;
 
     case "POST":
-        if (!(isset($_POST["name"]) and isset($_POST["preis"]))) {
+        $payload = json_decode(file_get_contents("php://input"), true);
+        if (!(isset($payload["name"]) and isset($payload["preis"]))) {
             http_response_code(400);
             break;
         } else {
-            $name = $_POST["name"]; // TODO: validate
-            $preis = $_POST["preis"]; // TODO: validate
+            $name = $payload["name"]; // TODO: validate
+            $preis = $payload["preis"]; // TODO: validate
             $res = $con->query("INSERT INTO Produkt(name, preis) VALUES('$name', $preis);");
 
             if ($res) {

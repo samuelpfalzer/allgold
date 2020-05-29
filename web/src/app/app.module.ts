@@ -26,7 +26,7 @@ import { HaendlerVerkaufComponent } from './haendler-verkauf/haendler-verkauf.co
 import { VerwaltungMenuComponent } from './verwaltung-menu/verwaltung-menu.component';
 import { NeuesProduktComponent } from './neues-produkt/neues-produkt.component';
 import { NeueVerkaufsstelleComponent } from './neue-verkaufsstelle/neue-verkaufsstelle.component';
-
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { NeueVerkaufsstelleComponent } from './neue-verkaufsstelle/neue-verkaufs
     MatDividerModule,
     MatIconModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

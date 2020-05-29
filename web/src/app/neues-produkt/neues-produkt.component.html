@@ -1,1 +1,30 @@
-<p>neues-produkt works!</p>
+<mat-toolbar color="primary">
+    <h2 class="mat-headline">Neues Produkt</h2>
+</mat-toolbar>
+
+<div class="component-container neues-produkt-container">
+    <div></div>
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-content>
+
+            <mat-form-field>
+                <mat-label>Produktname</mat-label>
+                <input matInput placeholder="Produktname" [(ngModel)]="name">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Preis (&euro;)</mat-label>
+                <input matInput placeholder="Preis (&euro;)" [(ngModel)]="preis">
+            </mat-form-field>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button *ngIf="(name != null) && (preis != null)" mat-button color="primary"
+                (click)="produktAnlegen()">ANLEGEN</button>
+            <button *ngIf="(name == null) || (preis == null)" mat-button disabled>ANLEGEN</button>
+        </mat-card-actions>
+    </mat-card>
+
+</div>
