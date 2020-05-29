@@ -14,7 +14,7 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             } else {
                 http_response_code(404);
             }
-        } else if (isset($_GET["liste"])) {
+        } else {
             $res = $con->query("SELECT * FROM Produkt;");
             if ($res->num_rows > 0) {
                 $produkte = array();

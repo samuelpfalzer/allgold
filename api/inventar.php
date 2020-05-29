@@ -35,10 +35,32 @@ switch ($_SERVER["REQUEST_METHOD"]) {
             }
         }
 
+        /* Format: { verkaufsstelle: string, artnr: number } */
     case "POST":
+        $payload = json_decode(file_get_contents("php://input"), true);
+
+        $verkaufsstelle = $payload["verkaufsstelle"];
+        $artnr = $payload["artnr"];
+
+        $res = $con->query("INSERT INTO Inventar(verkaufsstelle_id, produkt_id, vorrat, bedarf) VALUES ((SELECT id FROM Verkaufsstelle WHERE name = '$verkaufsstelle'), $artnr, 0, 1);");
+
+        /* TODO: check if successful? */
+        http_response_code(201);
         break;
 
+        /* Format: { verkaufsstelle: string, artnr: number, bedarf: number} */
     case "PUT":
+        $payload = json_decode(file_get_contents("php://input"), true);
+
+        $verkaufsstelle = $payload["verkaufsstelle"];
+        $artnr = $payload["artnr"];
+        $bedarf = $payload["bedarf"];
+
+        $res = $con->query("UPDATE Inventar SET bedarf = $bedarf WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name = '$verkaufsstelle') AND produkt_id = $artnr;");
+
+        /* TODO: validation etc :) */
+        http_response_code(200);
+        echo ("UPDATE Inventar SET bedarf = $bedarf WHERE verkaufsstelle_id = (SELECT id FROM Verkaufsstelle WHERE name = '$verkaufsstelle') AND produkt_id = $artnr;");
         break;
 
     case "DELETE":

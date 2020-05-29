@@ -11,7 +11,7 @@ export class HaendlerVerkaufComponent implements OnInit {
   name: string;
   verkauf: VerkaufsPosten[] = [];
   inventar: VerkaufsPosten[] = [];
-  columns: string[] = ["Produkt", "Menge", "Preis"];
+  columns: string[] = ["Artikelnummer", "Produkt", "Menge", "Preis"];
   neuesProdukt: string = null;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {

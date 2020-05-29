@@ -4,6 +4,11 @@
 
 <div class="component-container">
     <table mat-table *ngIf="verkauf.length > 0" [dataSource]="verkauf" class="mat-elevation-z8">
+        <ng-container matColumnDef="Artikelnummer">
+            <th mat-header-cell *matHeaderCellDef> Art.Nr. </th>
+            <td class="td-artnr" mat-cell *matCellDef="let element"> {{element.artnr}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="Produkt">
             <th mat-header-cell *matHeaderCellDef> Produkt </th>
             <td class="td-produkt" mat-cell *matCellDef="let element"> {{element.produkt}} </td>

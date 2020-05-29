@@ -2,16 +2,20 @@ table {
     width: 100%;
 }
 
+.td-artnr {
+    width: 10%;
+}
+
 .td-produkt {
     width: 50%;
 }
 
 .td-menge {
-    width: 25%;
+    width: 20%;
 }
 
 .td-preis {
-    width: 25%;
+    width: 20%;
 }
 
 .neues-produkt-card {

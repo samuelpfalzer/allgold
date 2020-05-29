@@ -4,6 +4,11 @@
 
 <div class="component-container">
     <table mat-table [dataSource]="inventar" class="mat-elevation-z8">
+        <ng-container matColumnDef="Artikelnummer">
+            <th mat-header-cell *matHeaderCellDef> Art.Nr. </th>
+            <td class="td-artnr" mat-cell *matCellDef="let element"> {{element.artnr}} </td>
+        </ng-container>
+
         <ng-container matColumnDef="Produkt">
             <th mat-header-cell *matHeaderCellDef> Produkt </th>
             <td class="td-produkt" mat-cell *matCellDef="let element"> {{element.produkt}} </td>
@@ -34,14 +39,19 @@
         <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
     </table>
 
-    <mat-card>
+    <mat-card *ngIf="bestellbar.length > 0">
         <mat-form-field>
             <mat-label>Neues Produkt anfordern</mat-label>
             <mat-select [(value)]="neuesProdukt">
-                <mat-option *ngFor="let produkt of produkte" [value]="produkt">{{produkt}}
+                <mat-option *ngFor="let produkt of bestellbar" [value]="produkt.name">{{produkt.name}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
         <button mat-raised-button class="anforderButton" color="primary" (click)="produktAnfordern()">Anfordern</button>
+    </mat-card>
+
+    <mat-card>
+        <a mat-raised-button color="primary" [routerLink]="['/app-haendler-menu', name]"
+            routerLinkActive="active">Fertig</a>
     </mat-card>
 </div>
