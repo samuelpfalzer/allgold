@@ -1,8 +1,16 @@
-a {
-    display: inline-block;
-    margin-bottom: 1rem;
+.haendler-menu-container {
+    margin: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.haendler-menu-container {
-    text-align: center;
+.menu-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+mat-card-actions {
+    text-align: right;
 }

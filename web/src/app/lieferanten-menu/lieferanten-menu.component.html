@@ -3,5 +3,19 @@
 </mat-toolbar>
 
 <div class="lieferanten-menu-container">
-    <a mat-raised-button color="primary" routerLink="/app-lieferplan" routerLinkActive="active">Lieferplan</a>
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-header>
+            <mat-card-title>
+                Lieferplan
+            </mat-card-title>
+            <mat-card-subtitle>
+                Automatischen Lieferplan erzeugen
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/capturing-the-human-heart-unsplash.jpg" alt="pimmel">
+        <mat-card-actions>
+            <a mat-button color="primary" routerLink="/app-lieferplan" routerLinkActive="active">ANZEIGEN</a>
+        </mat-card-actions>
+    </mat-card>
+
 </div>

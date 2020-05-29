@@ -3,9 +3,36 @@
 </mat-toolbar>
 
 <div class="component-container haendler-menu-container">
-    <a mat-raised-button color="primary" [routerLink]="['/app-haendler-inventar', name]"
-        routerLinkActive="active">Inventar</a>
-    <br />
-    <a mat-raised-button color="primary" [routerLink]="['/app-haendler-verkauf', name]"
-        routerLinkActive="active">Verkauf</a>
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-header>
+            <mat-card-title>
+                Inventar
+            </mat-card-title>
+            <mat-card-subtitle>
+                Lagerbestand & Produktbestellung
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/national-cancer-institute-unsplash.jpg" alt="pimmel">
+        <mat-card-actions>
+            <a mat-button color="primary" [routerLink]="['/app-haendler-inventar', name]"
+                routerLinkActive="active">ANZEIGEN</a>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-header>
+            <mat-card-title>
+                Verkauf
+            </mat-card-title>
+            <mat-card-subtitle>
+                Neuen Verkauf starten
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/viacheslav-bublyk-unsplash.jpg" alt="pimmel">
+        <mat-card-actions>
+            <a mat-button color="primary" [routerLink]="['/app-haendler-verkauf', name]"
+                routerLinkActive="active">STARTEN</a>
+        </mat-card-actions>
+    </mat-card>
 </div>

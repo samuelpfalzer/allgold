@@ -12,7 +12,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { HaendlerLoginComponent } from './haendler-login/haendler-login.component';
-import { LieferantenLoginComponent } from './lieferanten-login/lieferanten-login.component';
 import { LieferantenMenuComponent } from './lieferanten-menu/lieferanten-menu.component';
 import { HaendlerMenuComponent } from './haendler-menu/haendler-menu.component';
 import { LieferplanComponent } from './lieferplan/lieferplan.component';
@@ -33,7 +32,6 @@ import { NeueVerkaufsstelleComponent } from './neue-verkaufsstelle/neue-verkaufs
   declarations: [
     AppComponent,
     HaendlerLoginComponent,
-    LieferantenLoginComponent,
     LieferantenMenuComponent,
     HaendlerMenuComponent,
     LieferplanComponent,
