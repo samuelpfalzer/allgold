@@ -8,6 +8,9 @@ import { LieferplanComponent } from './lieferplan/lieferplan.component';
 import { HomeComponent } from './home/home.component';
 import { HaendlerInventarComponent } from './haendler-inventar/haendler-inventar.component';
 import { HaendlerVerkaufComponent } from './haendler-verkauf/haendler-verkauf.component';
+import { VerwaltungMenuComponent } from './verwaltung-menu/verwaltung-menu.component';
+import { NeuesProduktComponent } from './neues-produkt/neues-produkt.component';
+import { NeueVerkaufsstelleComponent } from './neue-verkaufsstelle/neue-verkaufsstelle.component';
 
 
 const routes: Routes = [
@@ -18,7 +21,10 @@ const routes: Routes = [
   { path: "app-home", component: HomeComponent },
   { path: "", redirectTo: "app-home", pathMatch: "full" },
   { path: "app-haendler-inventar/:name", component: HaendlerInventarComponent },
-  { path: "app-haendler-verkauf/:name", component: HaendlerVerkaufComponent }
+  { path: "app-haendler-verkauf/:name", component: HaendlerVerkaufComponent },
+  { path: "app-verwaltung-menu", component: VerwaltungMenuComponent },
+  { path: "app-neues-produkt", component: NeuesProduktComponent },
+  { path: "app-neue-verkaufsstelle", component: NeueVerkaufsstelleComponent }
 ];
 
 @NgModule({

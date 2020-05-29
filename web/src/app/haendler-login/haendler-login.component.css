@@ -1,12 +1,16 @@
 .haendler-login-container {
-    text-align: center;
-    justify-content: center;
+    margin: 1rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-mat-form-field {
-    display: inline-block;
+.menu-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
 }
 
-a {
-    display: inline-block;
+mat-card-actions {
+    text-align: right;
 }

@@ -56,18 +56,18 @@
                 </ng-container>
             </mat-select>
         </mat-form-field>
-        <button *ngIf="neuesProdukt != null" mat-raised-button class="anforderButton" color="primary"
-            (click)="neuerPosten()">Hinzufügen</button>
-        <button *ngIf="neuesProdukt == null" mat-raised-button class="anforderButton" disabled>Hinzufügen</button>
+        <button *ngIf="neuesProdukt != null" mat-button class="anforderButton" color="primary"
+            (click)="neuerPosten()">HINZUFÜGEN</button>
+        <button *ngIf="neuesProdukt == null" mat-button class="anforderButton" disabled>HINZUFÜGEN</button>
     </mat-card>
 
     <mat-card class="gesamt-card">
         <mat-card-title>GESAMT {{getGesamtpreis().toFixed(2)}} &euro;</mat-card-title>
         <mat-card-actions>
-            <button mat-raised-button class="verkaufButton" color="warn" (click)="verkaufAbbrechen()">Abbrechen</button>
-            <button *ngIf="getGesamtpreis() > 0" mat-raised-button class="verkaufButton" color="primary"
-                (click)="verkaufen()">Verkaufen</button>
-            <button *ngIf="getGesamtpreis() == 0" mat-raised-button class="verkaufButton" disabled>Verkaufen</button>
+            <button mat-button class="verkaufButton" color="warn" (click)="verkaufAbbrechen()">ABBRECHEN</button>
+            <button *ngIf="getGesamtpreis() > 0" mat-button class="verkaufButton" color="primary"
+                (click)="verkaufen()">VERKAUFEN</button>
+            <button *ngIf="getGesamtpreis() == 0" mat-button class="verkaufButton" disabled>VERKAUFEN</button>
         </mat-card-actions>
     </mat-card>
 

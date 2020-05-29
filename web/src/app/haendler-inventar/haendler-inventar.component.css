@@ -32,3 +32,7 @@ mat-card {
 .td-vorrat {
     width: 20%;
 }
+
+mat-card-actions {
+    text-align: right;
+}

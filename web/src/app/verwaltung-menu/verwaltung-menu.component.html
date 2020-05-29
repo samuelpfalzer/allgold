@@ -1,1 +1,37 @@
-<p>verwaltung-menu works!</p>
+<mat-toolbar color="primary">
+    <h2 class="mat-headline">Verwaltung</h2>
+</mat-toolbar>
+
+<div class="component-container verwaltung-menu-container">
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-header>
+            <mat-card-title>
+                Neues Produkt
+            </mat-card-title>
+            <mat-card-subtitle>
+                Neues Produkt anlegen
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/waldemar-brandt-kPqaqug998Y-unsplash.jpg" alt="pimmel">
+        <mat-card-actions>
+            <a mat-button color="primary" [routerLink]="['/app-neues-produkt']" routerLinkActive="active">ANLEGEN</a>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="menu-item" class="mat-elevation-z8 lieferplan-item">
+        <mat-card-header>
+            <mat-card-title>
+                Neue Verkaufsstelle
+            </mat-card-title>
+            <mat-card-subtitle>
+                Neue Verkaufsstelle eröffnen
+            </mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/arturo-rey-m6fYkq_P2Cc-unsplash.jpg" alt="pimmel">
+        <mat-card-actions>
+            <a mat-button color="primary" [routerLink]="['/app-neue-verkaufsstelle']"
+                routerLinkActive="active">ERÖFFNEN</a>
+        </mat-card-actions>
+    </mat-card>
+</div>

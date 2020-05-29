@@ -39,7 +39,7 @@
         <tr mat-row *matRowDef="let rowData; columns: columns"></tr>
     </table>
 
-    <mat-card *ngIf="bestellbar.length > 0">
+    <mat-card *ngIf="bestellbar.length > 0" class="mat-elevation-z8 lieferplan-item">
         <mat-form-field>
             <mat-label>Neues Produkt anfordern</mat-label>
             <mat-select [(value)]="neuesProdukt">
@@ -47,11 +47,15 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <button mat-raised-button class="anforderButton" color="primary" (click)="produktAnfordern()">Anfordern</button>
+        <button *ngIf="neuesProdukt != null" mat-button class="anforderButton" color="primary"
+            (click)="produktAnfordern()">ANFORDERN</button>
+        <button *ngIf="neuesProdukt == null" mat-button class="anforderButton" disabled>ANFORDERN</button>
     </mat-card>
 
-    <mat-card>
-        <a mat-raised-button color="primary" [routerLink]="['/app-haendler-menu', name]"
-            routerLinkActive="active">Fertig</a>
+    <mat-card class="mat-elevation-z8 lieferplan-item">
+        <mat-card-actions>
+            <a mat-button color="primary" [routerLink]="['/app-haendler-menu', name]" routerLinkActive="active">ZURÜCK
+                ZUM HÄNDLERMENÜ</a>
+        </mat-card-actions>
     </mat-card>
 </div>

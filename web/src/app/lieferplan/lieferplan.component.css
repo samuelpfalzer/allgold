@@ -21,6 +21,7 @@ td {
     align-content: space-between;
 }
 
-.lieferplan-container button {
-    display: block;
+mat-card-actions {
+    width: 100%;
+    text-align: right;
 }
