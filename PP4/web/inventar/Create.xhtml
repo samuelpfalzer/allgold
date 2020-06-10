@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateInventarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateInventarLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{inventarController.selected.id}" title="#{bundle.CreateInventarTitle_id}" required="true" requiredMessage="#{bundle.CreateInventarRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateInventarLabel_vorrat}" for="vorrat" />
+                    <h:inputText id="vorrat" value="#{inventarController.selected.vorrat}" title="#{bundle.CreateInventarTitle_vorrat}" required="true" requiredMessage="#{bundle.CreateInventarRequiredMessage_vorrat}"/>
+                    <h:outputLabel value="#{bundle.CreateInventarLabel_bedarf}" for="bedarf" />
+                    <h:inputText id="bedarf" value="#{inventarController.selected.bedarf}" title="#{bundle.CreateInventarTitle_bedarf}" required="true" requiredMessage="#{bundle.CreateInventarRequiredMessage_bedarf}"/>
+                    <h:outputLabel value="#{bundle.CreateInventarLabel_verkaufsstelleId}" for="verkaufsstelleId" />
+                    <h:selectOneMenu id="verkaufsstelleId" value="#{inventarController.selected.verkaufsstelleId}" title="#{bundle.CreateInventarTitle_verkaufsstelleId}" required="true" requiredMessage="#{bundle.CreateInventarRequiredMessage_verkaufsstelleId}">
+                        <f:selectItems value="#{verkaufsstelleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateInventarLabel_produktId}" for="produktId" />
+                    <h:selectOneMenu id="produktId" value="#{inventarController.selected.produktId}" title="#{bundle.CreateInventarTitle_produktId}" required="true" requiredMessage="#{bundle.CreateInventarRequiredMessage_produktId}">
+                        <f:selectItems value="#{produktController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{inventarController.create}" value="#{bundle.CreateInventarSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{inventarController.prepareList}" value="#{bundle.CreateInventarShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateInventarIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

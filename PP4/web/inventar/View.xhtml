@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewInventarTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewInventarLabel_id}"/>
+                    <h:outputText value="#{inventarController.selected.id}" title="#{bundle.ViewInventarTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewInventarLabel_vorrat}"/>
+                    <h:outputText value="#{inventarController.selected.vorrat}" title="#{bundle.ViewInventarTitle_vorrat}"/>
+                    <h:outputText value="#{bundle.ViewInventarLabel_bedarf}"/>
+                    <h:outputText value="#{inventarController.selected.bedarf}" title="#{bundle.ViewInventarTitle_bedarf}"/>
+                    <h:outputText value="#{bundle.ViewInventarLabel_verkaufsstelleId}"/>
+                    <h:outputText value="#{inventarController.selected.verkaufsstelleId}" title="#{bundle.ViewInventarTitle_verkaufsstelleId}"/>
+                    <h:outputText value="#{bundle.ViewInventarLabel_produktId}"/>
+                    <h:outputText value="#{inventarController.selected.produktId}" title="#{bundle.ViewInventarTitle_produktId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{inventarController.destroyAndView}" value="#{bundle.ViewInventarDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewInventarEditLink}"/>
+                <br />
+                <h:commandLink action="#{inventarController.prepareCreate}" value="#{bundle.ViewInventarCreateLink}" />
+                <br />
+                <h:commandLink action="#{inventarController.prepareList}" value="#{bundle.ViewInventarShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewInventarIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

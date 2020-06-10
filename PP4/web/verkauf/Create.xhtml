@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateVerkaufTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateVerkaufLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{verkaufController.selected.id}" title="#{bundle.CreateVerkaufTitle_id}" required="true" requiredMessage="#{bundle.CreateVerkaufRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateVerkaufLabel_menge}" for="menge" />
+                    <h:inputText id="menge" value="#{verkaufController.selected.menge}" title="#{bundle.CreateVerkaufTitle_menge}" required="true" requiredMessage="#{bundle.CreateVerkaufRequiredMessage_menge}"/>
+                    <h:outputLabel value="#{bundle.CreateVerkaufLabel_zeitpunkt}" for="zeitpunkt" />
+                    <h:inputText id="zeitpunkt" value="#{verkaufController.selected.zeitpunkt}" title="#{bundle.CreateVerkaufTitle_zeitpunkt}" required="true" requiredMessage="#{bundle.CreateVerkaufRequiredMessage_zeitpunkt}">
+                        <f:convertDateTime pattern="MM/dd/yyyy HH:mm:ss" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateVerkaufLabel_verkaufsstelleId}" for="verkaufsstelleId" />
+                    <h:selectOneMenu id="verkaufsstelleId" value="#{verkaufController.selected.verkaufsstelleId}" title="#{bundle.CreateVerkaufTitle_verkaufsstelleId}" required="true" requiredMessage="#{bundle.CreateVerkaufRequiredMessage_verkaufsstelleId}">
+                        <f:selectItems value="#{verkaufsstelleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateVerkaufLabel_produktId}" for="produktId" />
+                    <h:selectOneMenu id="produktId" value="#{verkaufController.selected.produktId}" title="#{bundle.CreateVerkaufTitle_produktId}" required="true" requiredMessage="#{bundle.CreateVerkaufRequiredMessage_produktId}">
+                        <f:selectItems value="#{produktController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{verkaufController.create}" value="#{bundle.CreateVerkaufSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{verkaufController.prepareList}" value="#{bundle.CreateVerkaufShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateVerkaufIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

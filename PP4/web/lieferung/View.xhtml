@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewLieferungTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewLieferungLabel_id}"/>
+                    <h:outputText value="#{lieferungController.selected.id}" title="#{bundle.ViewLieferungTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewLieferungLabel_menge}"/>
+                    <h:outputText value="#{lieferungController.selected.menge}" title="#{bundle.ViewLieferungTitle_menge}"/>
+                    <h:outputText value="#{bundle.ViewLieferungLabel_verkaufsstelleId}"/>
+                    <h:outputText value="#{lieferungController.selected.verkaufsstelleId}" title="#{bundle.ViewLieferungTitle_verkaufsstelleId}"/>
+                    <h:outputText value="#{bundle.ViewLieferungLabel_produktId}"/>
+                    <h:outputText value="#{lieferungController.selected.produktId}" title="#{bundle.ViewLieferungTitle_produktId}"/>
+                    <h:outputText value="#{bundle.ViewLieferungLabel_lieferant}"/>
+                    <h:outputText value="#{lieferungController.selected.lieferant}" title="#{bundle.ViewLieferungTitle_lieferant}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{lieferungController.destroyAndView}" value="#{bundle.ViewLieferungDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewLieferungEditLink}"/>
+                <br />
+                <h:commandLink action="#{lieferungController.prepareCreate}" value="#{bundle.ViewLieferungCreateLink}" />
+                <br />
+                <h:commandLink action="#{lieferungController.prepareList}" value="#{bundle.ViewLieferungShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewLieferungIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

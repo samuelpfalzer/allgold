@@ -465,12 +465,29 @@
     <application context-root="/PP4" object-type="user" name="PP4" directory-deployed="true" location="file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/">
       <property name="archiveType" value="war"></property>
       <property name="appLocation" value="file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="104316315691057152"></property>
+      <property name="org.glassfish.persistence.app_name_property" value="PP4"></property>
       <property name="defaultAppName" value="web"></property>
-      <property name="keepSessions" value="true"></property>
       <module name="PP4">
+        <engine sniffer="ejb"></engine>
         <engine sniffer="security"></engine>
+        <engine sniffer="weld"></engine>
+        <engine sniffer="jpa"></engine>
+        <engine sniffer="resources"></engine>
         <engine sniffer="web"></engine>
       </module>
+      <resources>
+        <jdbc-connection-pool datasource-classname="com.mysql.jdbc.jdbc2.optional.MysqlDataSource" name="java:app/mysql_allgold_testPool" wrap-jdbc-objects="false" connection-validation-method="auto-commit" res-type="javax.sql.DataSource">
+          <property name="URL" value="jdbc:mysql://localhost:3306/allgold"></property>
+          <property name="driverClass" value="org.gjt.mm.mysql.Driver"></property>
+          <property name="Password" value="test"></property>
+          <property name="portNumber" value="3306"></property>
+          <property name="databaseName" value="allgold"></property>
+          <property name="User" value="test"></property>
+          <property name="serverName" value="localhost"></property>
+        </jdbc-connection-pool>
+        <jdbc-resource pool-name="java:app/mysql_allgold_testPool" jndi-name="java:app/allgold"></jdbc-resource>
+      </resources>
     </application>
   </applications>
 </domain>

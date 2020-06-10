@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditLieferungTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditLieferungLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{lieferungController.selected.id}" title="#{bundle.EditLieferungTitle_id}" required="true" requiredMessage="#{bundle.EditLieferungRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditLieferungLabel_menge}" for="menge" />
+                    <h:inputText id="menge" value="#{lieferungController.selected.menge}" title="#{bundle.EditLieferungTitle_menge}" required="true" requiredMessage="#{bundle.EditLieferungRequiredMessage_menge}"/>
+                    <h:outputLabel value="#{bundle.EditLieferungLabel_verkaufsstelleId}" for="verkaufsstelleId" />
+                    <h:selectOneMenu id="verkaufsstelleId" value="#{lieferungController.selected.verkaufsstelleId}" title="#{bundle.EditLieferungTitle_verkaufsstelleId}" required="true" requiredMessage="#{bundle.EditLieferungRequiredMessage_verkaufsstelleId}">
+                        <f:selectItems value="#{verkaufsstelleController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditLieferungLabel_produktId}" for="produktId" />
+                    <h:selectOneMenu id="produktId" value="#{lieferungController.selected.produktId}" title="#{bundle.EditLieferungTitle_produktId}" required="true" requiredMessage="#{bundle.EditLieferungRequiredMessage_produktId}">
+                        <f:selectItems value="#{produktController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditLieferungLabel_lieferant}" for="lieferant" />
+                    <h:selectOneMenu id="lieferant" value="#{lieferungController.selected.lieferant}" title="#{bundle.EditLieferungTitle_lieferant}" required="true" requiredMessage="#{bundle.EditLieferungRequiredMessage_lieferant}">
+                        <f:selectItems value="#{lieferantController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{lieferungController.update}" value="#{bundle.EditLieferungSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditLieferungViewLink}"/>
+                <br />
+                <h:commandLink action="#{lieferungController.prepareList}" value="#{bundle.EditLieferungShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditLieferungIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

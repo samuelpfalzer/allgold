@@ -1,0 +1,57 @@
+/* AUTOMATICALLY GENERATED ON Wed Jun 10 01:17:56 CEST 2020*/
+/* DO NOT EDIT */
+
+grant {
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "edit,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "edit,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "edit,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "findRange,Local,int[]";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "findAll,Local,";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "edit,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "edit,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "remove,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "find,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "edit,Local,java.lang.Object";
+};
+
+grant      principal * * {
+  permission javax.security.jacc.EJBRoleRefPermission "VerkaufsstelleFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "VerkaufFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "InventarFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "LieferungFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "ProduktFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "LieferantFacade", "**";
+};
+
