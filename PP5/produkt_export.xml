@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<resultset statement="select * from Produkt" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <row>
+	<field name="id">1</field>
+	<field name="name">Milch</field>
+	<field name="preis">1.00</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+
+  <row>
+	<field name="id">2</field>
+	<field name="name">Naturjoghurt</field>
+	<field name="preis">1.20</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+
+  <row>
+	<field name="id">3</field>
+	<field name="name">Quark</field>
+	<field name="preis">0.80</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+
+  <row>
+	<field name="id">4</field>
+	<field name="name">Sahne</field>
+	<field name="preis">0.65</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+
+  <row>
+	<field name="id">5</field>
+	<field name="name">Emmentaler</field>
+	<field name="preis">1.30</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+
+  <row>
+	<field name="id">6</field>
+	<field name="name">Erdbeerkaese</field>
+	<field name="preis">1.37</field>
+	<field name="bestand">0</field>
+	<field name="aktiv">1</field>
+  </row>
+</resultset>

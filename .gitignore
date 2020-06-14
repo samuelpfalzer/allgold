@@ -5,3 +5,4 @@ mariadb
 glassfish/glassfish/domains/domain1/logs/*
 glassfish/glassfish/domains/domain1/logs/
 glassfish/glassfish/domains/domain1/config/pid
+glassfish/glassfish/domains/domain1/logs/

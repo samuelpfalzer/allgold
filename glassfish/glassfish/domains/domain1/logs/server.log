@@ -6156,3 +6156,46 @@ java.lang.ClassCastException: cannot assign instance of java.lang.String to fiel
 [2020-06-14T18:42:44.828+0200] [glassfish 4.1] [WARNING] [jsf.application.resource.unable_to_serve] [javax.enterprise.resource.webcontainer.jsf.application] [tid: _ThreadID=113 _ThreadName=http-listener-1(1)] [timeMillis: 1592152964828] [levelValue: 900] [[
   JSF1064: Unable to find or serve resource, /allgold/List.xhtml.]]
 
+[2020-06-14T21:35:01.224+0200] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=1235 _ThreadName=Thread-41] [timeMillis: 1592163301224] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2020-06-14T21:35:01.229+0200] [glassfish 4.1] [INFO] [NCLS-CORE-00092] [javax.enterprise.system.core] [tid: _ThreadID=1236 _ThreadName=Thread-42] [timeMillis: 1592163301229] [levelValue: 800] [[
+  Server shutdown initiated]]
+
+[2020-06-14T21:35:01.263+0200] [glassfish 4.1] [INFO] [NCLS-BOOTSTRAP-00028] [javax.enterprise.bootstrap] [tid: _ThreadID=1235 _ThreadName=Thread-41] [timeMillis: 1592163301263] [levelValue: 800] [[
+  Unregistered com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl@6ae7deac from service registry.]]
+
+[2020-06-14T21:35:01.264+0200] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=1235 _ThreadName=Thread-8] [timeMillis: 1592163301264] [levelValue: 800] [[
+  FileMonitoring shutdown]]
+
+[2020-06-14T21:35:01.264+0200] [glassfish 4.1] [WARNING] [NCLS-BOOTSTRAP-00029] [javax.enterprise.bootstrap] [tid: _ThreadID=1236 _ThreadName=Thread-42] [timeMillis: 1592163301264] [levelValue: 900] [[
+  Exception while unregistering: 
+java.lang.IllegalStateException: Service already unregistered.
+	at org.apache.felix.framework.ServiceRegistrationImpl.unregister(ServiceRegistrationImpl.java:123)
+	at com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl.unregisterService(EmbeddedOSGiGlassFishImpl.java:93)
+	at com.sun.enterprise.glassfish.bootstrap.osgi.EmbeddedOSGiGlassFishImpl.stop(EmbeddedOSGiGlassFishImpl.java:81)
+	at com.sun.enterprise.v3.admin.StopServer.doExecute(StopServer.java:78)
+	at com.sun.enterprise.v3.admin.StopDomainCommand.execute(StopDomainCommand.java:96)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:539)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2$1.run(CommandRunnerImpl.java:535)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at javax.security.auth.Subject.doAs(Subject.java:360)
+	at com.sun.enterprise.v3.admin.CommandRunnerImpl$2.execute(CommandRunnerImpl.java:534)
+	at org.glassfish.api.AsyncImpl$1$1.run(AsyncImpl.java:76)
+]]
+
+[2020-06-14T21:35:01.280+0200] [glassfish 4.1] [INFO] [NCLS-JMX-00002] [javax.enterprise.system.jmx] [tid: _ThreadID=1235 _ThreadName=Thread-41] [timeMillis: 1592163301280] [levelValue: 800] [[
+  JMXStartupService: Stopped JMXConnectorServer: null]]
+
+[2020-06-14T21:35:01.281+0200] [glassfish 4.1] [INFO] [NCLS-JMX-00001] [javax.enterprise.system.jmx] [tid: _ThreadID=1235 _ThreadName=Thread-41] [timeMillis: 1592163301281] [levelValue: 800] [[
+  JMXStartupService and JMXConnectors have been shut down.]]
+
+[2020-06-14T21:35:01.391+0200] [glassfish 4.1] [INFO] [] [org.eclipse.persistence.session./file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/WEB-INF/classes/_PP4PU.connection] [tid: _ThreadID=1240 _ThreadName=RunLevelControllerThread-1592163301322] [timeMillis: 1592163301391] [levelValue: 800] [[
+  /file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/WEB-INF/classes/_PP4PU logout successful]]
+
+[2020-06-14T21:35:01.445+0200] [glassfish 4.1] [INFO] [] [] [tid: _ThreadID=1243 _ThreadName=Thread-8] [timeMillis: 1592163301445] [levelValue: 800] [[
+  JdbcRuntimeExtension,  getAllSystemRAResourcesAndPools = [GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcResource, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool, GlassFishConfigBean.org.glassfish.jdbc.config.JdbcConnectionPool]]]
+
+[2020-06-14T21:35:01.479+0200] [glassfish 4.1] [INFO] [ra.stop-successful] [javax.enterprise.resource.resourceadapter.com.sun.enterprise.connectors.service] [tid: _ThreadID=1245 _ThreadName=Thread-50] [timeMillis: 1592163301479] [levelValue: 800] [[
+  RAR7094: __ds_jdbc_ra shutdown successful.]]
+
