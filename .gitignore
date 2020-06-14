@@ -1,4 +1,7 @@
 mariadb
 /PP4/nbproject/private/
 /PP4/build/
-/PP4/dist/
+/PP4/dist/glassfish/glassfish/domains/domain1/config/pid
+glassfish/glassfish/domains/domain1/logs/*
+glassfish/glassfish/domains/domain1/logs/
+glassfish/glassfish/domains/domain1/config/pid

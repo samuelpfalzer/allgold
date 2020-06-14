@@ -1,4 +1,4 @@
-/* AUTOMATICALLY GENERATED ON Wed Jun 10 01:17:56 CEST 2020*/
+/* AUTOMATICALLY GENERATED ON Sun Jun 14 18:40:38 CEST 2020*/
 /* DO NOT EDIT */
 
 grant {
@@ -13,9 +13,11 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "edit,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "ProduktFacade", "count,Local,";
   permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "inventarByProdukt,Local,pp4.model.Produkt";
   permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "findAll,Local,";
-  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "count,Local,";
+  permission javax.security.jacc.EJBMethodPermission "InventarFacade", "getProduktGesamtMenge,Local,pp4.model.Produkt";
   permission javax.security.jacc.EJBMethodPermission "InventarFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "count,Local,";
   permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "findRange,Local,int[]";
   permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "remove,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "LieferantFacade", "create,Local,java.lang.Object";
@@ -35,8 +37,8 @@ grant {
   permission javax.security.jacc.EJBMethodPermission "InventarFacade", "remove,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "remove,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "LieferungFacade", "findAll,Local,";
-  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "edit,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "create,Local,java.lang.Object";
+  permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "edit,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "VerkaufFacade", "remove,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "VerkaufsstelleFacade", "find,Local,java.lang.Object";
   permission javax.security.jacc.EJBMethodPermission "InventarFacade", "edit,Local,java.lang.Object";
@@ -48,8 +50,8 @@ grant {
 
 grant      principal * * {
   permission javax.security.jacc.EJBRoleRefPermission "VerkaufsstelleFacade", "**";
-  permission javax.security.jacc.EJBRoleRefPermission "VerkaufFacade", "**";
   permission javax.security.jacc.EJBRoleRefPermission "InventarFacade", "**";
+  permission javax.security.jacc.EJBRoleRefPermission "VerkaufFacade", "**";
   permission javax.security.jacc.EJBRoleRefPermission "LieferungFacade", "**";
   permission javax.security.jacc.EJBRoleRefPermission "ProduktFacade", "**";
   permission javax.security.jacc.EJBRoleRefPermission "LieferantFacade", "**";

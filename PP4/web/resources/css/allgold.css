@@ -8,6 +8,10 @@ and open the template in the editor.
     Author     : samu
 */
 
+.shadow {
+    box-shadow: rgb(0,0,0,.6) 0 0 1rem;
+}
+
 body {
     margin: 0;
     left: 0;
@@ -30,7 +34,6 @@ body {
     background-color: #6495ed;
     color: white;
     padding: 1rem;
-    box-shadow: black 0 0 1rem;
 }
 
 .menubar strong {
@@ -56,4 +59,67 @@ body {
 
 .menubar a:hover {
     background-color: #6091e9;
+}
+
+.list_form {
+    padding: 1rem;
+    border-radius: .2rem;
+    text-align: center;
+}
+
+.list_form a {
+    display: inline-block;
+    background-color: #6495ed;
+    color: white;
+    text-decoration: none;
+    padding: .4rem;
+    border-radius: .2rem;
+}
+
+.list_form table {
+    width: 100%;
+    border-radius: .2rem;
+    border: none;
+    margin: 1rem 0;
+}
+
+.list_form th {
+    background-color: #6495ed;
+    color: white;
+}
+
+.list_form td, th {
+    border: none;
+    padding: .2rem 1rem;
+}
+.table_odd_row {
+    background-color: #eeeeee;
+}
+
+.table_even_row {
+    background-color: #ffffff;
+}
+
+.cowBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("pics/andy-kelly-5APBLfC2hUs-unsplash.jpg");
+    background-repeat: none;
+    background-size: cover;
+    background-position-x: right;
+    background-positoin-y: bottom;
+    z-index: -2;
+}
+
+.chart_form {
+    padding: 1rem;
+    border-radius: .2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    text-align: left;
 }

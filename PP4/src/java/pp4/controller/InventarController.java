@@ -1,11 +1,13 @@
 package pp4.controller;
 
 import pp4.model.Inventar;
+import pp4.model.Produkt;
 import pp4.controller.util.JsfUtil;
 import pp4.controller.util.PaginationHelper;
 
 import java.io.Serializable;
 import java.util.ResourceBundle;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -229,6 +231,26 @@ public class InventarController implements Serializable {
             }
         }
 
+    }
+    
+    
+    
+    /* Eigene Methoden */
+    
+    public String prepareInventarByProdukt() {
+        current = (Inventar) getItems().getRowData();
+        selectedItemIndex = pagination.getPageFirstItem() + getItems().getRowIndex();
+        return "produktbestand";
+    }
+    
+    public List<Inventar> getInventarByProdukt(Produkt produktId) {
+        recreatePagination();
+        recreateModel();
+        return ejbFacade.inventarByProdukt(produktId);
+    }
+    
+    public int getProduktGesamtMenge(Produkt p) {
+        return ejbFacade.getProduktGesamtMenge(p);
     }
 
 }

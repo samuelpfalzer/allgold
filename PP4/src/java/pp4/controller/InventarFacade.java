@@ -5,10 +5,12 @@
  */
 package pp4.controller;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import pp4.model.Inventar;
+import pp4.model.Produkt;
 
 /**
  *
@@ -27,6 +29,21 @@ public class InventarFacade extends AbstractFacade<Inventar> {
 
     public InventarFacade() {
         super(Inventar.class);
+    }
+    
+    
+    /* Eigene Methoden */
+    public List<Inventar> inventarByProdukt(Produkt produktId) {
+        return em.createNamedQuery("Inventar.findByProduktId").setParameter("produktId", produktId).getResultList();
+    }
+    
+    public int getProduktGesamtMenge(Produkt p) {
+         List<Inventar> inv = inventarByProdukt(p);
+         int menge = 0;
+         for (Inventar i : inv) {
+             menge += i.getVorrat();
+         }
+         return menge;
     }
     
 }

@@ -464,10 +464,12 @@
   <applications>
     <application context-root="/PP4" object-type="user" name="PP4" directory-deployed="true" location="file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/">
       <property name="archiveType" value="war"></property>
+      <property name="org.glassfish.ejb.startup.keepstate" value="true"></property>
       <property name="appLocation" value="file:/home/samu/Documents/studium/Internettechnologien/Praktikum/PP4/build/web/"></property>
-      <property name="org.glassfish.ejb.container.application_unique_id" value="104316315691057152"></property>
+      <property name="org.glassfish.ejb.container.application_unique_id" value="104342530743730176"></property>
       <property name="org.glassfish.persistence.app_name_property" value="PP4"></property>
       <property name="defaultAppName" value="web"></property>
+      <property name="keepSessions" value="true"></property>
       <module name="PP4">
         <engine sniffer="ejb"></engine>
         <engine sniffer="security"></engine>

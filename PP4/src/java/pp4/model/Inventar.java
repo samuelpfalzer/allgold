@@ -29,6 +29,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Inventar.findAll", query = "SELECT i FROM Inventar i"),
+    @NamedQuery(name = "Inventar.findByProduktId", query = "SELECT i FROM Inventar i WHERE i.produktId = :produktId"),
     @NamedQuery(name = "Inventar.findById", query = "SELECT i FROM Inventar i WHERE i.id = :id"),
     @NamedQuery(name = "Inventar.findByVorrat", query = "SELECT i FROM Inventar i WHERE i.vorrat = :vorrat"),
     @NamedQuery(name = "Inventar.findByBedarf", query = "SELECT i FROM Inventar i WHERE i.bedarf = :bedarf")})
