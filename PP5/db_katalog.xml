@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="allgold">
+	<table_structure name="Inventar">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="verkaufsstelle_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="vorrat" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="bedarf" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
+		<key Table="Inventar" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="2" Column_name="produkt_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Inventar" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="17" Avg_row_length="963" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="18" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Inventar">
+	<row>
+		<field name="id">1</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">10</field>
+		<field name="bedarf">20</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">2</field>
+		<field name="vorrat">2</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">3</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">4</field>
+		<field name="vorrat">20</field>
+		<field name="bedarf">20</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="verkaufsstelle_id">2</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">3</field>
+		<field name="bedarf">3</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="verkaufsstelle_id">2</field>
+		<field name="produkt_id">3</field>
+		<field name="vorrat">3</field>
+		<field name="bedarf">7</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="verkaufsstelle_id">2</field>
+		<field name="produkt_id">4</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="verkaufsstelle_id">3</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="verkaufsstelle_id">4</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">1</field>
+		<field name="bedarf">8</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="verkaufsstelle_id">4</field>
+		<field name="produkt_id">5</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="verkaufsstelle_id">5</field>
+		<field name="produkt_id">5</field>
+		<field name="vorrat">4</field>
+		<field name="bedarf">4</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="verkaufsstelle_id">5</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="verkaufsstelle_id">5</field>
+		<field name="produkt_id">6</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">1</field>
+		<field name="vorrat">10</field>
+		<field name="bedarf">20</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">2</field>
+		<field name="vorrat">2</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">3</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">4</field>
+		<field name="vorrat">17</field>
+		<field name="bedarf">20</field>
+	</row>
+	</table_data>
+	<table_structure name="Lieferant">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(100)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="aktiv" Type="tinyint(1)" Null="NO" Key="" Default="1" Extra="" Comment="" />
+		<key Table="Lieferant" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="3" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Lieferant" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="3" Avg_row_length="5461" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="0" Auto_increment="4" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Lieferant">
+	<row>
+		<field name="id">1</field>
+		<field name="name">Peter Pointer</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">Big Dick Kadim</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">Herr Fahri</field>
+		<field name="aktiv">1</field>
+	</row>
+	</table_data>
+	<table_structure name="Lieferung">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="verkaufsstelle_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="menge" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="lieferant" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<key Table="Lieferung" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="lieferant" Seq_in_index="1" Column_name="lieferant" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Lieferung" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="1" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Lieferung">
+	</table_data>
+	<table_structure name="Produkt">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="name" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="preis" Type="decimal(6,2)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="bestand" Type="int(11)" Null="NO" Key="" Default="0" Extra="" Comment="" />
+		<field Field="aktiv" Type="tinyint(1)" Null="NO" Key="" Default="1" Extra="" Comment="" />
+		<key Table="Produkt" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Produkt" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Produkt" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="7" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Produkt">
+	<row>
+		<field name="id">1</field>
+		<field name="name">Milch</field>
+		<field name="preis">1.00</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="name">Naturjoghurt</field>
+		<field name="preis">1.20</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="name">Quark</field>
+		<field name="preis">0.80</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="name">Sahne</field>
+		<field name="preis">0.65</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="name">Emmentaler</field>
+		<field name="preis">1.30</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="name">Erdbeerkaese</field>
+		<field name="preis">1.37</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	</table_data>
+	<table_structure name="Verkauf">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="verkaufsstelle_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
+		<field Field="menge" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="zeitpunkt" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="on update current_timestamp()" Comment="" />
+		<key Table="Verkauf" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkauf" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkauf" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Verkauf" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Verkauf">
+	</table_data>
+	<table_structure name="Verkaufsstelle">
+		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
+		<field Field="typ" Type="enum('Haendler','Automat')" Null="NO" Key="" Extra="" Comment="" />
+		<field Field="name" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="ort" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
+		<field Field="aktiv" Type="tinyint(1)" Null="NO" Key="" Default="1" Extra="" Comment="" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="ort" Seq_in_index="1" Column_name="ort" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Verkaufsstelle" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="7" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+	</table_structure>
+	<table_data name="Verkaufsstelle">
+	<row>
+		<field name="id">1</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Peters Kaeseecke</field>
+		<field name="ort">Ziegengasse 3</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="typ">Automat</field>
+		<field name="name">Automat 001</field>
+		<field name="ort">Milchstrasse 23</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Molkereiprodukte Mueller</field>
+		<field name="ort">Malerweg 1</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="typ">Automat</field>
+		<field name="name">Automat 002</field>
+		<field name="ort">Hauptstrasse 108</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Herr Fahris fahrbarer Quarkverkauf</field>
+		<field name="ort">mobil</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Quarkmatik</field>
+		<field name="ort">CSStreet 123</field>
+		<field name="aktiv">1</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
