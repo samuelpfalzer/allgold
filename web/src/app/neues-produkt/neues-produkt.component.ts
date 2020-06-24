@@ -19,9 +19,11 @@ export class NeuesProduktComponent implements OnInit {
   }
 
   produktAnlegen() {
-    this.http.post("/api/produkt", { name: this.name, preis: this.preis }).subscribe(e => {
-      console.log("pimmel");
-    });
+    this.http.post("/api/produkt", { name: this.name, preis: this.preis }).subscribe(e => { });
+    this.router.navigate(['/app-verwaltung-menu']);
+  }
+
+  abbrechen() {
     this.router.navigate(['/app-verwaltung-menu']);
   }
 }

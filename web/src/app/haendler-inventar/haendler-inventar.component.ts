@@ -24,22 +24,24 @@ export class HaendlerInventarComponent implements OnInit {
   }
 
   refreshInventar() {
-    this.inventar = null;
     this.http.get("/api/inventar", { params: { verkaufsstelle: this.name } }).subscribe(
       (elements: InventarPosten[]) => {
         this.inventar = elements;
-        console.log(this.inventar);
+        if (this.inventar == null) {
+          this.inventar = [];
+        }
         this.refreshProdukte();
       }
     );
   }
 
   refreshProdukte() {
-    this.bestellbar = null;
     this.http.get("/api/produkt").subscribe(
       (elements: ProduktPosten[]) => {
         this.bestellbar = elements.filter(a => this.inventar.filter(b => b.artnr === a.id).length === 0);
-        console.log(this.bestellbar);
+        if (this.bestellbar == null) {
+          this.bestellbar = [];
+        }
       }
     );
   }

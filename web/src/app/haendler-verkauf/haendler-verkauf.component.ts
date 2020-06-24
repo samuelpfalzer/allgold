@@ -71,7 +71,6 @@ export class HaendlerVerkaufComponent implements OnInit {
         posten: posten
       }
     ).subscribe((response: Response) => {
-      console.log("Pimmel " + response.status);
       this.router.navigate(['/app-haendler-menu', this.name]);
     });
   }

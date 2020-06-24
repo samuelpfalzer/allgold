@@ -61,7 +61,15 @@
         <button *ngIf="neuesProdukt == null" mat-button class="anforderButton" disabled>HINZUFÜGEN</button>
     </mat-card>
 
-    <mat-card class="gesamt-card">
+    <mat-card *ngIf="inventar.length == 0 && verkauf.length == 0" class="mat-elevation-z8 no-products-warning">
+        <mat-card-header>
+            <mat-card-title>Keine Produkte im Inventar</mat-card-title>
+            <mat-card-subtitle>Fordern Sie über das Inventar-Menü neue Produkte an oder warten Sie auf die nächste
+                Lieferung</mat-card-subtitle>
+        </mat-card-header>
+    </mat-card>
+
+    <mat-card class="gesamt-card mat-elevation-z8">
         <mat-card-title>GESAMT {{getGesamtpreis().toFixed(2)}} &euro;</mat-card-title>
         <mat-card-actions>
             <button mat-button class="verkaufButton" color="warn" (click)="verkaufAbbrechen()">ABBRECHEN</button>

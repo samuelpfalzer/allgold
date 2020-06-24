@@ -30,6 +30,7 @@
         </mat-card-content>
 
         <mat-card-actions>
+            <button mat-button color="warn" (click)="abbrechen()">ABBRECHEN</button>
             <button *ngIf="(name != null) && (ort != null) && (typ != null)" mat-button color="primary"
                 (click)="eroeffnen()">ERÖFFNEN</button>
             <button *ngIf="(name == null) || (ort == null) || (typ == null)" mat-button disabled>ERÖFFNEN</button>

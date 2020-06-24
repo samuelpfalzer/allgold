@@ -24,7 +24,11 @@ export class NeueVerkaufsstelleComponent implements OnInit {
 
   eroeffnen() {
     this.http.post("/api/verkaufsstelle", { name: this.name, ort: this.ort, typ: this.typ }).subscribe(e => {
-      console.log("pimmel");
+      this.router.navigate(["/app-verwaltung-menu"]);
     })
+  }
+
+  abbrechen() {
+    this.router.navigate(["/app-verwaltung-menu"]);
   }
 }

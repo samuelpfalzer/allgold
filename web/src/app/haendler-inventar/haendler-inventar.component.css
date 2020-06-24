@@ -36,3 +36,7 @@ mat-card {
 mat-card-actions {
     text-align: right;
 }
+
+.no-products-warning {
+    text-align: left;
+}
