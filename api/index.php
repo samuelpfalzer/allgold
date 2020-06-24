@@ -1,3 +1,3 @@
 <?php
 
-echo "Pimmel";
+echo "Allgold";

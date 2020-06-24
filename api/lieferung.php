@@ -36,10 +36,10 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         }
 
         $response = array();
-        foreach ($payload["posten"] as $pimmel) {
+        foreach ($payload["posten"] as $posten) {
             $verkaufsstelle = $payload["verkaufsstelle"];
-            $produkt = $pimmel["produkt"];
-            $menge = $pimmel["menge"];
+            $produkt = $posten["produkt"];
+            $menge = $posten["menge"];
 
             $res = $con->query("INSERT INTO Lieferung(verkaufsstelle_id, produkt_id, menge, lieferant) VALUES ((SELECT id FROM Verkaufsstelle WHERE name='$verkaufsstelle'),(SELECT id FROM Produkt WHERE name='$produkt'),$menge,1);");
 

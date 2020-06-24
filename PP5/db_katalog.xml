@@ -7,32 +7,32 @@
 		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="vorrat" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="bedarf" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
-		<key Table="Inventar" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="2" Column_name="produkt_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Inventar" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="17" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="Inventar" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="17" Avg_row_length="963" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="18" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+		<key Table="Inventar" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="24" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="24" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="0" Key_name="verkaufsstelle_id" Seq_in_index="2" Column_name="produkt_id" Collation="A" Cardinality="24" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Inventar" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="24" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Inventar" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="24" Avg_row_length="682" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="25" Create_time="2020-06-14 16:42:30" Update_time="2020-06-24 09:38:12" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
 	</table_structure>
 	<table_data name="Inventar">
 	<row>
 		<field name="id">1</field>
 		<field name="verkaufsstelle_id">1</field>
 		<field name="produkt_id">1</field>
-		<field name="vorrat">10</field>
+		<field name="vorrat">20</field>
 		<field name="bedarf">20</field>
 	</row>
 	<row>
 		<field name="id">2</field>
 		<field name="verkaufsstelle_id">1</field>
 		<field name="produkt_id">2</field>
-		<field name="vorrat">2</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">3</field>
 		<field name="verkaufsstelle_id">1</field>
 		<field name="produkt_id">3</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
@@ -53,35 +53,35 @@
 		<field name="id">6</field>
 		<field name="verkaufsstelle_id">2</field>
 		<field name="produkt_id">3</field>
-		<field name="vorrat">3</field>
+		<field name="vorrat">7</field>
 		<field name="bedarf">7</field>
 	</row>
 	<row>
 		<field name="id">7</field>
 		<field name="verkaufsstelle_id">2</field>
 		<field name="produkt_id">4</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">8</field>
 		<field name="verkaufsstelle_id">3</field>
 		<field name="produkt_id">1</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">9</field>
 		<field name="verkaufsstelle_id">4</field>
 		<field name="produkt_id">1</field>
-		<field name="vorrat">1</field>
+		<field name="vorrat">8</field>
 		<field name="bedarf">8</field>
 	</row>
 	<row>
 		<field name="id">10</field>
 		<field name="verkaufsstelle_id">4</field>
 		<field name="produkt_id">5</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
@@ -95,43 +95,92 @@
 		<field name="id">12</field>
 		<field name="verkaufsstelle_id">5</field>
 		<field name="produkt_id">1</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">13</field>
 		<field name="verkaufsstelle_id">5</field>
 		<field name="produkt_id">6</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">14</field>
 		<field name="verkaufsstelle_id">6</field>
 		<field name="produkt_id">1</field>
-		<field name="vorrat">10</field>
+		<field name="vorrat">20</field>
 		<field name="bedarf">20</field>
 	</row>
 	<row>
 		<field name="id">15</field>
 		<field name="verkaufsstelle_id">6</field>
 		<field name="produkt_id">2</field>
-		<field name="vorrat">2</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">16</field>
 		<field name="verkaufsstelle_id">6</field>
 		<field name="produkt_id">3</field>
-		<field name="vorrat">0</field>
+		<field name="vorrat">5</field>
 		<field name="bedarf">5</field>
 	</row>
 	<row>
 		<field name="id">17</field>
 		<field name="verkaufsstelle_id">6</field>
 		<field name="produkt_id">4</field>
-		<field name="vorrat">17</field>
+		<field name="vorrat">20</field>
 		<field name="bedarf">20</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">6</field>
+		<field name="vorrat">5</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="verkaufsstelle_id">25</field>
+		<field name="produkt_id">2</field>
+		<field name="vorrat">4</field>
+		<field name="bedarf">4</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="verkaufsstelle_id">26</field>
+		<field name="produkt_id">3</field>
+		<field name="vorrat">1</field>
+		<field name="bedarf">1</field>
+	</row>
+	<row>
+		<field name="id">21</field>
+		<field name="verkaufsstelle_id">26</field>
+		<field name="produkt_id">4</field>
+		<field name="vorrat">4</field>
+		<field name="bedarf">4</field>
+	</row>
+	<row>
+		<field name="id">22</field>
+		<field name="verkaufsstelle_id">27</field>
+		<field name="produkt_id">9</field>
+		<field name="vorrat">5</field>
+		<field name="bedarf">5</field>
+	</row>
+	<row>
+		<field name="id">23</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">6</field>
+		<field name="vorrat">1</field>
+		<field name="bedarf">31</field>
+	</row>
+	<row>
+		<field name="id">24</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">7</field>
+		<field name="vorrat">0</field>
+		<field name="bedarf">7</field>
 	</row>
 	</table_data>
 	<table_structure name="Lieferant">
@@ -164,13 +213,174 @@
 		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="menge" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="lieferant" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
-		<key Table="Lieferung" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Lieferung" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Lieferung" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Lieferung" Non_unique="1" Key_name="lieferant" Seq_in_index="1" Column_name="lieferant" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="Lieferung" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="1" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+		<key Table="Lieferung" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="23" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="23" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="23" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Lieferung" Non_unique="1" Key_name="lieferant" Seq_in_index="1" Column_name="lieferant" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Lieferung" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="23" Avg_row_length="712" Data_length="16384" Max_data_length="0" Index_length="49152" Data_free="0" Auto_increment="24" Create_time="2020-06-14 16:42:30" Update_time="2020-06-24 09:37:39" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
 	</table_structure>
 	<table_data name="Lieferung">
+	<row>
+		<field name="id">1</field>
+		<field name="verkaufsstelle_id">5</field>
+		<field name="produkt_id">1</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="verkaufsstelle_id">5</field>
+		<field name="produkt_id">6</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">1</field>
+		<field name="menge">10</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">2</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">3</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">6</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">4</field>
+		<field name="menge">3</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">6</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="verkaufsstelle_id">3</field>
+		<field name="produkt_id">1</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="verkaufsstelle_id">4</field>
+		<field name="produkt_id">1</field>
+		<field name="menge">7</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">10</field>
+		<field name="verkaufsstelle_id">4</field>
+		<field name="produkt_id">5</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">11</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">1</field>
+		<field name="menge">10</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">12</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">2</field>
+		<field name="menge">3</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">13</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">3</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">14</field>
+		<field name="verkaufsstelle_id">6</field>
+		<field name="produkt_id">4</field>
+		<field name="menge">3</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">15</field>
+		<field name="verkaufsstelle_id">25</field>
+		<field name="produkt_id">2</field>
+		<field name="menge">4</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">16</field>
+		<field name="verkaufsstelle_id">2</field>
+		<field name="produkt_id">3</field>
+		<field name="menge">4</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">17</field>
+		<field name="verkaufsstelle_id">2</field>
+		<field name="produkt_id">4</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">18</field>
+		<field name="verkaufsstelle_id">26</field>
+		<field name="produkt_id">3</field>
+		<field name="menge">1</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">19</field>
+		<field name="verkaufsstelle_id">26</field>
+		<field name="produkt_id">4</field>
+		<field name="menge">4</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">20</field>
+		<field name="verkaufsstelle_id">27</field>
+		<field name="produkt_id">9</field>
+		<field name="menge">5</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">21</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">6</field>
+		<field name="menge">3</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">22</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">7</field>
+		<field name="menge">7</field>
+		<field name="lieferant">1</field>
+	</row>
+	<row>
+		<field name="id">23</field>
+		<field name="verkaufsstelle_id">27</field>
+		<field name="produkt_id">9</field>
+		<field name="menge">3</field>
+		<field name="lieferant">1</field>
+	</row>
 	</table_data>
 	<table_structure name="Produkt">
 		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
@@ -178,9 +388,9 @@
 		<field Field="preis" Type="decimal(6,2)" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="bestand" Type="int(11)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="aktiv" Type="tinyint(1)" Null="NO" Key="" Default="1" Extra="" Comment="" />
-		<key Table="Produkt" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Produkt" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="Produkt" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="7" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+		<key Table="Produkt" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="9" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Produkt" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="9" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Produkt" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="9" Avg_row_length="1820" Data_length="16384" Max_data_length="0" Index_length="16384" Data_free="0" Auto_increment="10" Create_time="2020-06-14 16:42:30" Update_time="2020-06-24 09:21:24" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
 	</table_structure>
 	<table_data name="Produkt">
 	<row>
@@ -225,6 +435,27 @@
 		<field name="bestand">0</field>
 		<field name="aktiv">1</field>
 	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="name">FischstÃ¤bchen</field>
+		<field name="preis">2.29</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">8</field>
+		<field name="name">a</field>
+		<field name="preis">2.20</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">9</field>
+		<field name="name">Lollys</field>
+		<field name="preis">0.80</field>
+		<field name="bestand">0</field>
+		<field name="aktiv">1</field>
+	</row>
 	</table_data>
 	<table_structure name="Verkauf">
 		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
@@ -232,12 +463,47 @@
 		<field Field="produkt_id" Type="int(11)" Null="NO" Key="MUL" Extra="" Comment="" />
 		<field Field="menge" Type="int(11)" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="zeitpunkt" Type="timestamp" Null="NO" Key="" Default="current_timestamp()" Extra="on update current_timestamp()" Comment="" />
-		<key Table="Verkauf" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Verkauf" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Verkauf" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="Verkauf" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="0" Avg_row_length="0" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="1" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+		<key Table="Verkauf" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="5" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkauf" Non_unique="1" Key_name="verkaufsstelle_id" Seq_in_index="1" Column_name="verkaufsstelle_id" Collation="A" Cardinality="5" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkauf" Non_unique="1" Key_name="produkt_id" Seq_in_index="1" Column_name="produkt_id" Collation="A" Cardinality="5" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Verkauf" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="5" Avg_row_length="3276" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="6" Create_time="2020-06-14 16:42:30" Update_time="2020-06-24 09:38:02" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
 	</table_structure>
 	<table_data name="Verkauf">
+	<row>
+		<field name="id">1</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">2</field>
+		<field name="menge">2</field>
+		<field name="zeitpunkt">2020-06-24 08:18:56</field>
+	</row>
+	<row>
+		<field name="id">2</field>
+		<field name="verkaufsstelle_id">1</field>
+		<field name="produkt_id">4</field>
+		<field name="menge">3</field>
+		<field name="zeitpunkt">2020-06-24 08:18:56</field>
+	</row>
+	<row>
+		<field name="id">3</field>
+		<field name="verkaufsstelle_id">27</field>
+		<field name="produkt_id">9</field>
+		<field name="menge">3</field>
+		<field name="zeitpunkt">2020-06-24 09:22:31</field>
+	</row>
+	<row>
+		<field name="id">4</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">7</field>
+		<field name="menge">7</field>
+		<field name="zeitpunkt">2020-06-24 09:38:02</field>
+	</row>
+	<row>
+		<field name="id">5</field>
+		<field name="verkaufsstelle_id">28</field>
+		<field name="produkt_id">6</field>
+		<field name="menge">2</field>
+		<field name="zeitpunkt">2020-06-24 09:38:02</field>
+	</row>
 	</table_data>
 	<table_structure name="Verkaufsstelle">
 		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
@@ -245,10 +511,10 @@
 		<field Field="name" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
 		<field Field="ort" Type="varchar(100)" Null="NO" Key="UNI" Extra="" Comment="" />
 		<field Field="aktiv" Type="tinyint(1)" Null="NO" Key="" Default="1" Extra="" Comment="" />
-		<key Table="Verkaufsstelle" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Verkaufsstelle" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<key Table="Verkaufsstelle" Non_unique="0" Key_name="ort" Seq_in_index="1" Column_name="ort" Collation="A" Cardinality="6" Null="" Index_type="BTREE" Comment="" Index_comment="" />
-		<options Name="Verkaufsstelle" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="6" Avg_row_length="2730" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="7" Create_time="2020-06-14 16:42:30" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="11" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="name" Seq_in_index="1" Column_name="name" Collation="A" Cardinality="11" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<key Table="Verkaufsstelle" Non_unique="0" Key_name="ort" Seq_in_index="1" Column_name="ort" Collation="A" Cardinality="11" Null="" Index_type="BTREE" Comment="" Index_comment="" />
+		<options Name="Verkaufsstelle" Engine="InnoDB" Version="10" Row_format="Dynamic" Rows="11" Avg_row_length="1489" Data_length="16384" Max_data_length="0" Index_length="32768" Data_free="0" Auto_increment="29" Create_time="2020-06-14 16:42:30" Update_time="2020-06-24 09:36:44" Collation="latin1_swedish_ci" Create_options="" Comment="" Max_index_length="0" Temporary="N" />
 	</table_structure>
 	<table_data name="Verkaufsstelle">
 	<row>
@@ -291,6 +557,41 @@
 		<field name="typ">Haendler</field>
 		<field name="name">Quarkmatik</field>
 		<field name="ort">CSStreet 123</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">7</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Lilis Milchverkauf</field>
+		<field name="ort">ghljbvwf</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">25</field>
+		<field name="typ">Automat</field>
+		<field name="name">asd</field>
+		<field name="ort">asd</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">26</field>
+		<field name="typ">Automat</field>
+		<field name="name">a</field>
+		<field name="ort">b</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">27</field>
+		<field name="typ">Haendler</field>
+		<field name="name">Lillis Quarkverkauf</field>
+		<field name="ort">asdjkflhl</field>
+		<field name="aktiv">1</field>
+	</row>
+	<row>
+		<field name="id">28</field>
+		<field name="typ">Automat</field>
+		<field name="name">Jonas Instantnudeln</field>
+		<field name="ort">asdlfhn aisdhf</field>
 		<field name="aktiv">1</field>
 	</row>
 	</table_data>

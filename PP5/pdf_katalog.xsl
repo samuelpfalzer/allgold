@@ -43,7 +43,7 @@
 							</fo:block>
 							<fo:block font-size="11pt" text-transform="none">
 								<fo:inline font-size="8pt" baseline-shift="super">1</fo:inline>
-								Pimmel
+								Fußnote
 							</fo:block>
 						</fo:footnote-body>
 					</fo:footnote>

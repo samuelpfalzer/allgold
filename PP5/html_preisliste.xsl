@@ -38,7 +38,7 @@
 							<tr>
 								<td> <xsl:value-of select="../field[@name='id']"/> </td>
 								<td> <xsl:value-of select="../field[@name='name']"/> </td>
-								<td> <xsl:value-of select="../field[@name='preis']"/> &euro; </td>
+								<td> <xsl:value-of select="../field[@name='preis']"/> </td>
 							</tr>
 					</xsl:for-each>
 				</table>
